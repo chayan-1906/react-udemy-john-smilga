@@ -9,11 +9,9 @@ export const About = () => {
 
             <div className="section-center about-center">
                 <div className="about-img">
-                    <img
-                        src={aboutImg}
+                    <img src={aboutImg}
                         className="about-photo"
-                        alt="awesome beach"
-                    />
+                        alt="awesome beach"/>
                 </div>
                 <article className="about-info">
                     <h3>explore the difference</h3>
@@ -27,7 +25,7 @@ export const About = () => {
                         quisquam harum nam cumque temporibus explicabo dolorum sapiente odio
                         unde dolor?
                     </p>
-                    <a href="#" className="btn">read more</a>
+                    <a href="#about" className="btn">read more</a>
                 </article>
             </div>
         </section>
