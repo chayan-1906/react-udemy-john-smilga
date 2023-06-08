@@ -1,4 +1,4 @@
-# Review
+# Tabs
 
 ## Available Scripts
 
@@ -20,7 +20,7 @@ Your app is ready to be deployed!
 ### Preview
 <table>
     <tr>
-        <td><img src="https://github.com/chayan-1906/react-udemy-john-smilga/assets/82430454/ed19a203-5867-4358-bc0b-5fcc0be2a6d8" 
-                    alt="Review"></td>
+        <td><img src="https://github.com/chayan-1906/react-udemy-john-smilga/assets/82430454/ad429d57-1bb7-4343-94f8-5af6d4ae7bea" alt="Tabs 1"></td>
+        <td><img src="https://github.com/chayan-1906/react-udemy-john-smilga/assets/82430454/b56da530-d8f8-4a0b-8cff-a1ea142be7d9" alt="Tabs 2"></td>
     </tr>
 </table>
