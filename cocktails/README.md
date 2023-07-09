@@ -4,8 +4,6 @@
 
 ### API: https://www.thecocktaildb.com/
 
-### Live Demo: https://cocktails-appp.netlify.app/
-
 In the project directory, you can run:
 
 ### `npm run serve`
