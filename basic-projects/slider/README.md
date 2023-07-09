@@ -1,4 +1,4 @@
-# Accordion
+# Slider
 
 ## Available Scripts
 
