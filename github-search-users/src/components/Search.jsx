@@ -1,10 +1,41 @@
-import React from 'react';
-import styled from 'styled-components';
-import { MdSearch } from 'react-icons/md';
-import { GithubContext } from '../context/context.jsx';
+import styled from 'styled-components'
+import {MdSearch} from 'react-icons/md'
+import {GithubContext} from '../context/context.jsx'
+import {useContext, useState} from 'react'
+
 const Search = () => {
-  return <h2>search component</h2>;
-};
+    const [user, setUser] = useState('')
+    const {requests, error} = useContext(GithubContext)
+
+    const handleSubmit = (e) => {
+        console.log(user)
+        e.preventDefault()
+        if (user) {
+
+        }
+    }
+
+    return (
+        <section className='section'>
+            <Wrapper className='section-center'>
+                {error.show && <ErrorWrapper><p>{error.msg}</p></ErrorWrapper>}
+                <form onSubmit={handleSubmit}>
+                    <div className='form-control'>
+                        <MdSearch/>
+                        <input
+                            type='text'
+                            placeholder='enter github user'
+                            value={user}
+                            onChange={(e) => setUser(e.target.value)}
+                        />
+                        {requests > 0 && <button type='submit'>search</button>}
+                    </div>
+                </form>
+                <h3>requests: {requests}/60</h3>
+            </Wrapper>
+        </section>
+    )
+}
 
 const Wrapper = styled.div`
   position: relative;
@@ -17,6 +48,7 @@ const Wrapper = styled.div`
       padding: 0 0.5rem;
     }
   }
+
   .form-control {
     background: var(--clr-white);
     display: grid;
@@ -25,6 +57,7 @@ const Wrapper = styled.div`
     column-gap: 0.5rem;
     border-radius: 5px;
     padding: 0.5rem;
+
     input {
       border-color: transparent;
       outline-color: var(--clr-grey-10);
@@ -32,11 +65,13 @@ const Wrapper = styled.div`
       color: var(--clr-grey-3);
       padding: 0.25rem 0.5rem;
     }
+
     input::placeholder {
       color: var(--clr-grey-3);
       text-transform: capitalize;
       letter-spacing: var(--spacing);
     }
+
     button {
       border-radius: 5px;
       border-color: transparent;
@@ -47,6 +82,7 @@ const Wrapper = styled.div`
       color: var(--clr-white);
       transition: var(--transition);
       cursor: pointer;
+
       &:hover {
         background: var(--clr-primary-8);
         color: var(--clr-primary-1);
@@ -56,11 +92,13 @@ const Wrapper = styled.div`
     svg {
       color: var(--clr-grey-5);
     }
+
     input,
     button,
     svg {
       font-size: 1.3rem;
     }
+
     @media (max-width: 800px) {
       button,
       input,
@@ -69,12 +107,14 @@ const Wrapper = styled.div`
       }
     }
   }
+
   h3 {
     margin-bottom: 0;
     color: var(--clr-grey-5);
     font-weight: 400;
   }
-`;
+`
+
 const ErrorWrapper = styled.article`
   position: absolute;
   width: 90vw;
@@ -82,9 +122,11 @@ const ErrorWrapper = styled.article`
   left: 0;
   transform: translateY(-100%);
   text-transform: capitalize;
+
   p {
     color: red;
     letter-spacing: var(--spacing);
   }
-`;
-export default Search;
+`
+
+export default Search
