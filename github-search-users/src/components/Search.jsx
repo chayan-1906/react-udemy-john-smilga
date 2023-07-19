@@ -5,13 +5,12 @@ import {useContext, useState} from 'react'
 
 const Search = () => {
     const [user, setUser] = useState('')
-    const {requests, error} = useContext(GithubContext)
+    const {requests, error, searchGithubUser, isLoading} = useContext(GithubContext)
 
     const handleSubmit = (e) => {
-        console.log(user)
         e.preventDefault()
         if (user) {
-
+            searchGithubUser(user)
         }
     }
 
@@ -26,9 +25,12 @@ const Search = () => {
                             type='text'
                             placeholder='enter github user'
                             value={user}
-                            onChange={(e) => setUser(e.target.value)}
+                            onChange={(e) => {
+                                setUser(e.target.value)
+                                // searchGithubUser(e.target.value)
+                            }}
                         />
-                        {requests > 0 && <button type='submit'>search</button>}
+                        {requests > 0 && !isLoading && (<button type='submit'>search</button>)}
                     </div>
                 </form>
                 <h3>requests: {requests}/60</h3>
