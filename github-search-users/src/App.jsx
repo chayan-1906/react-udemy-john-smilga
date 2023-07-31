@@ -1,4 +1,3 @@
-import {useState} from 'react'
 import './App.css'
 import {Dashboard, Login, PrivateRoute, AuthWrapper, Error} from './pages'
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
